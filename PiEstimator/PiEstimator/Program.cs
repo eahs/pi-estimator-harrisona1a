@@ -25,8 +25,22 @@ namespace PiEstimator
             Random rand = new Random(System.Environment.TickCount);
             double pi = 0.0;
 
-            // TODO: Calculate Pi
+            double inside = 0;
+            
+            for (int i = 0; i < n; i++)
+            {
+                double x = rand.NextDouble();
+                double y = rand.NextDouble();
+                if ((x * x) + (y * y) <= 1)
+                {
+                    Console.WriteLine("Inside");
+                    inside++;
+                }
+            }
 
+            pi = 4 * (inside / n);
+            Console.WriteLine(pi);
+            
             return pi;
         }
 
